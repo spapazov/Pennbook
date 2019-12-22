@@ -1,0 +1,17 @@
+<div id="container">
+  <ngx-graph 
+    class="chart-container" 
+    [draggingEnabled]="false" 
+    [panningEnabled]="false" 
+    [enableZoom]="false"
+    [autoZoom]="true" 
+    [autoCenter]="true" 
+    [links]="links" 
+    [nodes]="nodes">
+    <ng-template #nodeTemplate let-node>
+      <svg:g class="node" (click)="nodeClicked(node.id)">
+        <svg:text alignment-baseline="central" y="15" [attr.fill]="node.color">{{node.label}}</svg:text>
+      </svg:g>
+    </ng-template>
+  </ngx-graph>
+</div>

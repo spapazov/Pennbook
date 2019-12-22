@@ -1,0 +1,17 @@
+<div *ngIf="!editing">
+  <span *ngIf="type == 'date'"> {{ value | date}} </span>
+  <span *ngIf="type != 'date'"> {{ value }} </span>
+  <span *ngIf="!(editable || addable) && !value">---</span>  
+  <button *ngIf="editable && value" class="btn btn-warning" type="button" (click)="edit()">Edit</button>
+  <button *ngIf="(editable || addable) && !value" class="btn btn-success" type="button" (click)="edit()"><fa-icon [icon]="iconAdd"></fa-icon>&nbsp;Add</button>
+  <button *ngIf="deletable && value" class="btn btn-danger" type="button" (click)="delete()">Remove</button>
+</div>
+<div *ngIf="editing" class="input-group">
+  <input *ngIf="type == 'date'" type="date" [ngModel] ="value | date" (ngModelChange)="value = $event">
+  <input *ngIf="type != 'date'" type="text" class="form-control" [(ngModel)]="value">
+  <div class="input-group-append">
+    <button class="btn btn-success" type="button" (click)="save()"><fa-icon [icon]="iconSave"></fa-icon></button>
+  </div>
+<div>
+
+</div>

@@ -1,0 +1,21 @@
+.card {
+    margin: 20px 0;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-actions .picture {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custom-file {
+    max-width: 250px;
+    margin-right: 10px;
+}

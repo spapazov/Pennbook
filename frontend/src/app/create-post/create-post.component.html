@@ -1,0 +1,27 @@
+<div class="card">
+  <div *ngIf = 'error' class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Something went wrong!</strong> Please add text and retry
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">New post</h5>
+    <textarea class="form-control" name="content" [(ngModel)]="content" #email="ngModel" id="content" rows="3"
+      placeholder="Whats on your mind?"></textarea>
+    <div class="card-actions">
+      <div class="picture">
+        <div class="custom-file">
+          <input type="file" accept="image/*" class="custom-file-input" (change)="onFileChanged($event)" required>
+          <label class="custom-file-label" for="validatedCustomFile">{{file?.name || 'Upload picture...' }}</label>
+        </div>
+        <div *ngIf="ownWall() && file != null" class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="profilePicture" [(ngModel)]="profilePicture">
+            <label class="custom-control-label" for="profilePicture">Use as profile picture</label>
+          </div>
+      </div>
+      <button *ngIf="!posting" class="btn btn-primary" (click)="postWithPicture()">Post</button>
+      <button *ngIf="posting" class="btn btn-primary" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Posting...
+      </button>
+    </div>
+  </div>
+</div>

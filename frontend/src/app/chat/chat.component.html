@@ -1,0 +1,96 @@
+
+<ng-template #addMember let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add member</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="friend" *ngFor="let friend of getFriendsNotInChat()">
+            <button type="button" class="btn btn-outline-success" (click)="modal.close(friend.username)">{{ friend.fullName }} ({{friend.username}})</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #renameChat let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Rename chat</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                        <input id="message" type="text" class="form-control" [(ngModel)]="chat.name" />
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-primary" (click)="modal.close('rename')">Rename</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+            
+
+<div class="threads">
+    <h3 class="title">Chats</h3>
+    <div class="items">
+        <div [routerLink]="['/chat']" [queryParams]="{ new: true}" routerLinkActive="active">
+            <span>
+                <div class="name">Start a new chat</div>
+                <div>Select friend</div>
+            </span>
+        </div>
+        <div *ngFor="let item of chats"  [routerLink]="['/chat']" [queryParams]="{ id: item.chatId}" routerLinkActive="active">
+            <span>
+                <div class="name">{{item.name}}</div>
+                <div>{{participants(item)}}</div>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="chat">
+    <div *ngIf="chat != null; then chatBlock else noChatBlock"></div>
+    <ng-template #chatBlock>
+        <div class="title">
+            <h3>{{chat.name}}</h3>
+            <button type="button" class="btn btn-danger" (click)="removeChat()">Leave chat</button>
+            <button *ngIf="canAddMember()" type="button" class="btn btn-success" (click)="open(addMember, 'addMember')">Add new member</button>
+            <button type="button" class="btn btn-primary" (click)="open(renameChat, 'renameChat')">Rename chat</button>
+        </div>
+
+        <div class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+            <div *ngFor="let item of chat.messages">
+                <span>
+                    <div class="user">{{item.creator}}</div>
+                    <div class="content">{{item.content}}</div>
+                </span>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="messageInput">
+                <input id="message" type="text" class="form-control" [(ngModel)]="message"  on-keyup="$event.keyCode == 13 && sendMessage()"
+                    placeholder="Type your message here..." /></div>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="sendMessage()"> Send </button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #noChatBlock>
+        <h3 class="title">Start new chat</h3>
+        <div class="starChatPanel"> 
+            <div class="friend" *ngFor="let friend of friends">
+                    <div class="startChat" [routerLink]="['/chat']" [queryParams]="{ friend: friend.username, create: true}">
+                        <span>
+                            <div class="name">{{friend.fullName}}</div>
+                            <div>{{friend.username}}</div>
+                        </span>
+                    </div>                    
+                </div>
+            </div>
+    </ng-template>
+</div>

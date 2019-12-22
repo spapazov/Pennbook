@@ -1,0 +1,8 @@
+.profile-picture {
+    width: 64px;
+    height: 64px;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}

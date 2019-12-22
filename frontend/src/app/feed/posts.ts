@@ -1,0 +1,4 @@
+export class Posts{
+	result: [];
+
+}

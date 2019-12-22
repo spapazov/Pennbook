@@ -1,0 +1,15 @@
+Daniel	Zoe
+Daniel	Stefan
+Zoe	Daniel
+Stefan	Daniel
+Daniel	(Upenn)
+Zoe	(Upenn)
+Stefan	(Upenn)
+Daniel	(ETH)
+Zoe	(Usyd)
+Zoe	Iris
+Iris	(Upenn)
+Iris	(Spain)
+Iris	Maria
+Iris	Zoe
+Maria	Iris

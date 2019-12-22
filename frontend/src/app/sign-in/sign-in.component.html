@@ -1,0 +1,35 @@
+<div class="container" style="padding-top: 20px; padding-left: 10px">
+  <div *ngIf = 'error' class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Something went wrong!</strong> Please verify your input
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click) = 'closeError()'>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3> Register </h3>
+      <form (ngSubmit)="registerUser(user)" #user="ngForm" >
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" name="fullName" [(ngModel)]="model.fullName" #firstName="ngModel" placeholder="Enter full name" required>
+      </div>
+      <div class="form-group">
+        <label for="birthday">Birthday</label>
+        <input  class="form-control" name="birthday" type="date" [ngModel] ="model.birthday | date:'yyyy-MM-dd'" [(ngModel)]="model.birthday" #birthday="ngModel" placeholder="Enter birthday" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"  aria-describedby="emailHelp" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" id="exampleInputPassword1" placeholder="Password" required>
+      </div >
+      <button type="submit" class="btn btn-primary" >Sign Up</button>
+    </form>
+    </div>
+    <div class="offset-1 col-7">
+      <img src='assets/network.jpg' width="100%">
+    </div>
+  </div>
+</div>

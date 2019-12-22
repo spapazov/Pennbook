@@ -1,0 +1,61 @@
+.card {
+    margin: 10px 0;
+}
+
+.card-body .post-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-body .post-content .timestamp {
+    margin-top: -6px;
+}
+
+.spacer {
+    margin: .5rem -1.25rem;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+}
+
+.reactions {
+    color: gray;
+    font-weight: bold;
+}
+
+.card .profile-picture {
+    margin-right: 20px;
+}
+
+.card .post-content .content {
+    max-width: calc(100% - 84px);
+}
+
+.card .picture {
+    border-radius: 5px;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-actions .picture {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custom-file {
+    max-width: 250px;
+    margin-right: 10px;
+}

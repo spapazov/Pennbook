@@ -1,0 +1,32 @@
+.profile {
+    background-color: white;
+}
+
+.profile h5 {
+    text-align: center;
+    margin: 0;
+}
+
+.flex-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex-col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-row.space-between {
+    justify-content: space-between;
+}
+
+.spacer {
+    margin: 20px;
+}
+
+.spacer.small {
+    margin: 10px;
+}

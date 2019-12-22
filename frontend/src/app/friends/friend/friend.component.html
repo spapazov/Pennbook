@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <app-profile-picture  [url]="friend.profilePicture" [size]="'96px'"></app-profile-picture>
+    <div class="spacer"></div>
+    <h5 class="card-title">{{ friend.fullName }}</h5>
+    <div>
+      <div>{{friend.username}}</div>
+    </div>
+    <div class="card-actions">
+      <a *ngIf="showChat" [routerLink]="['/chat']" [queryParams]="{ friend: friend.username }" class="btn btn-success" (click) = 'closeModal()'>Send message</a>
+      <div class="spacer"></div>
+      <a [routerLink]="['/profile', friend.username]" class="btn btn-primary" (click) = 'closeModal()'>Go to profile</a>
+    </div>
+  </div>
+</div>

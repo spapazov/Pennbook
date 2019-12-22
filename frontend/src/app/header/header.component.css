@@ -1,0 +1,133 @@
+.navbar {
+    background-color: #1976d2;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 60px;
+}
+
+.navbar span {
+    display: flex;
+    align-items: center;
+}
+
+.navbar span input {
+    margin-left: 10px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.navbar .navbar-brand  {
+    color: white;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 2px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 1);
+    color: #1976d2;
+}
+
+.card {
+    margin: 15px 0;
+}
+
+.card h5 {
+    margin: 0;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-actions .btn {
+    margin-top: 10px;
+}
+
+.card-img-top-container {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-top-container .card-img-top  {
+    position: absolute;
+}
+
+.card {
+    margin: 10px 0;
+}
+
+.card-body .post-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-body .post-content .timestamp {
+    margin-top: -6px;
+}
+
+.spacer {
+    margin: .5rem -1.25rem;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+}
+
+.reactions {
+    color: gray;
+    font-weight: bold;
+}
+
+.card .profile-picture {
+    margin-right: 20px;
+}
+
+.card .post-content .content {
+    max-width: calc(100% - 84px);
+}
+
+.card .picture {
+    border-radius: 5px;
+    margin: .5rem 0;
+    width: 100%;
+}
+
+.card-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-actions .picture {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custom-file {
+    max-width: 250px;
+    margin-right: 10px;
+}
+
+
+.modal-dialog {
+    width: 800px;
+  }

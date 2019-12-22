@@ -1,0 +1,22 @@
+Full name:  Daniel Sparber, Stefan Papazov, Zoe Er
+SEAS login: dsparber@seas.upenn.edu, spapazov@seas.upenn.edu, zoeehy@seas.upenn.edu
+
+Which features did you implement? 
+ Entire assignment
+
+Did you complete any extra-credit tasks? If so, which ones?
+Yes: Comments, Reactions, Affiliations Pages, Interest Pages, HTTPS Encryption, DNS record, Security Tokens (JWT), Pictures, Profile Pictures, Endless Scrolling, Group Chats, Persistent Group Chats, Multiple Chats with same members possible, Different Types of Posts, Automatic Posts, Cross Site Scripting Protection, data model support for reactions and pictures for comments, data model support for unlimited depth of comments (comment of comment of comment, .....), tokenized search, secrets stored in environment, nginx setup, custom visualizer, loading animations 
+
+Did you personally write all the code you are submitting
+(other than code from the course web page)?
+  [/] Yes
+  [ ] No
+
+Did you copy any code from the Internet, or from classmates?
+  [ ] Yes
+  [/] No
+
+Did you collaborate with anyone on this assignment?
+  [ ] Yes
+  [ ] No
+  [/] Only with teammates

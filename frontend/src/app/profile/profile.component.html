@@ -1,0 +1,70 @@
+<div class="profile">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <div class="spacer"></div>
+        <div class="flex-row space-between">
+          <div class="flex-row">
+            <div class="flex-col">
+              <app-profile-picture [url]="profile.profilePicture" [size]="'128px'"></app-profile-picture>
+              <div class="spacer small"></div>
+              <h5>{{ profile.fullName }}</h5>
+              <div>{{ profile.username }}</div>
+            </div>
+            <div class="spacer"></div>
+            <div class="flex-row">
+              <div>
+                <div><strong>Email</strong></div>
+                <app-string-editor [value]="profile.email" [editable]="editing && myPage()" (onSave)="updateEmail($event)"></app-string-editor>
+                <div class="spacer small"></div>
+                <div><strong>Birthday</strong></div>
+                <app-string-editor [value]="profile.birthday" [type]="'date'" [editable]="editing && myPage()" (onSave)="updateBirthday($event)"></app-string-editor>
+                <div class="spacer small"></div>
+                <div><strong>About me</strong></div>
+                <app-string-editor [value]="profile.about" [editable]="editing && myPage()" (onSave)="updateAbout($event)"></app-string-editor>
+                <div class="spacer small"></div>
+              </div>
+              <div class="spacer"></div>
+              <div>
+                <div><strong>Affiliations</strong></div>
+                <span *ngIf = 'editing'>
+                    <app-string-editor  *ngFor="let value of profile.affiliations" [value]="value.name" [deletable]="editing && myPage()" (onDelete)="removeAffiliation($event)"></app-string-editor>
+                </span>
+                <span *ngIf = '!editing'>
+                  <div *ngFor="let value of profile.affiliations">
+                    <a routerLink='/affiliation/{{value.name}}'>{{value.name}}</a>
+                  </div>
+                </span>
+                <app-string-editor *ngIf="editing && myPage()" [addable]="true" (onSave)="addAffiliation($event)"></app-string-editor>
+                <div class="spacer small"></div>
+                <div><strong>Interests</strong></div>
+                <span *ngIf = 'editing'>
+                  <app-string-editor *ngFor="let value of profile.interests" [value]="value.name" [deletable]="editing && myPage()" (onDelete)="removeInterest($event)"></app-string-editor>
+                </span>
+                <span *ngIf = '!editing'>
+                  <div *ngFor="let value of profile.interests">
+                      <a  routerLink='/interest/{{value.name}}'>{{value.name}}</a>
+                  </div>
+                </span>
+                <app-string-editor *ngIf="editing && myPage()" [addable]="true" (onSave)="addInterest($event)"></app-string-editor>
+              </div>
+            </div>
+          </div>
+          <button *ngIf="myPage() && !editing" (click)="editing = true" class="btn btn-warning">Edit</button>
+          <button *ngIf="myPage() && editing" (click)="editing = false" class="btn btn-primary">Done</button>
+          <button *ngIf="!isFriend && !addingFriend" (click)="addFriend()" class="btn btn-success">Add Friend</button>
+          <button *ngIf="!isFriend && addingFriend" class="btn btn-success" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Adding Friend...
+          </button>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <app-feed *ngIf="user" [wall]="user" [type]="'user'"></app-feed>
+</div>

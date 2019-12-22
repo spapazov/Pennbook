@@ -1,0 +1,13 @@
+<div class="container">
+  <h3 *ngIf="users == null || users.length > 0">People interested in {{ name }}</h3>
+  <app-loading *ngIf="users == null"></app-loading>
+  <div class="row">
+    <div class="col-6 col-md-4 col-lg-3" *ngFor="let user of users">
+      <app-friend [friend]="user" [showChat]="true"></app-friend>
+    </div>
+  </div>
+  <h3>Posts of people interested in {{name}}</h3>
+  <div class="row">
+    <app-feed [wall]="name" [type]="'interest'"></app-feed>
+  </div>
+</div>
