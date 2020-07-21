@@ -15,7 +15,7 @@ The app also included a chat feature which was implemented using socket.io on th
 <img src="https://www.cis.upenn.edu/~nets212/img/2019-g39-2.png?raw=true"/>
 
 ## Adsorption Algorithm & Map Reduce
-The app also includes a friend recomendation system which is based on Baluja et al.'s ![Adsorption Algorithm] https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/34407.pdf and works in similar fashion to the google Page Rank algorithm. The implementation of this algorithm is done through the Apache Hadoop framework to allow for distributed processing so as to accomodate for large scale social media graph. 
+The app also includes a friend recomendation system which is based on Baluja et al.'s ![Adsorption Algorithm](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/34407.pdf) and works in similar fashion to the google Page Rank algorithm. The implementation of this algorithm is done through the Apache Hadoop framework to allow for distributed processing so as to accomodate for large scale social media graph. 
 
 ## Scalability & Security
 
